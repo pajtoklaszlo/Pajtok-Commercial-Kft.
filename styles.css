@@ -330,3 +330,7 @@ img { max-width: 100%; display: block; }
   padding: 8px 12px;
   border-radius: 12px;
 }
+filter: drop-shadow(0 0 2px white)
+          drop-shadow(0 0 2px white)
+          drop-shadow(0 0 2px white);
+}
