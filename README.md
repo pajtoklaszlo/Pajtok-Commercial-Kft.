@@ -1,0 +1,1 @@
+# Pajtok-Commercial-Kft.
