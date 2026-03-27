@@ -325,3 +325,8 @@ img { max-width: 100%; display: block; }
   }
   .site-nav.open { display: flex; }
 }
+.brand {
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
