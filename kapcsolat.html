@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAJTÓK Commercial Kft. – Kapcsolat</title>
+  <meta name="description" content="PAJTÓK Commercial Kft. kapcsolat oldal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.jpg" alt="PAJTÓK Commercial Kft. logó" class="brand-logo" />
+      </a>
+      <button class="menu-toggle" aria-label="Menü megnyitása">☰</button>
+      <nav class="site-nav">
+        <a href="index.html">Bemutatkozás</a>
+        <a href="esg.html">ESG</a>
+        <a href="kollegaink.html">Kollégáink</a>
+        <a class="active" href="kapcsolat.html">Kapcsolat</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero small-hero">
+      <div class="container">
+        <p class="eyebrow">Kapcsolat</p>
+        <h1>Lépjen kapcsolatba velünk</h1>
+        <p class="lead narrow">A kapcsolat oldal mintaadatokkal készült, amelyek könnyen lecserélhetők a végleges céges adatokra.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="card contact-card">
+          <h2>Kapcsolati adatok</h2>
+          <div class="contact-list">
+            <div>
+              <span class="contact-label">Cégnév</span>
+              <strong>PAJTÓK Commercial Kft.</strong>
+            </div>
+            <div>
+              <span class="contact-label">E-mail</span>
+              <strong>info@pelda.hu</strong>
+            </div>
+            <div>
+              <span class="contact-label">Telefon</span>
+              <strong>+36 30 123 4567</strong>
+            </div>
+            <div>
+              <span class="contact-label">Cím</span>
+              <strong>Ide kerülhet a székhely vagy iroda címe</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card contact-card">
+          <h2>Üzenetküldés</h2>
+          <form class="contact-form">
+            <label>Név
+              <input type="text" placeholder="Az Ön neve" />
+            </label>
+            <label>E-mail
+              <input type="email" placeholder="email@pelda.hu" />
+            </label>
+            <label>Üzenet
+              <textarea rows="5" placeholder="Írja meg üzenetét..."></textarea>
+            </label>
+            <button type="button" class="btn btn-primary">Küldés</button>
+          </form>
+          <p class="form-note">A gomb jelenleg látványelem. Később valódi űrlapküldéssel is összeköthető.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> PAJTÓK Commercial Kft. Minden jog fenntartva.</p>
+      <p class="footer-note">Statikus, ingyenesen publikálható weboldal-verzió.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
