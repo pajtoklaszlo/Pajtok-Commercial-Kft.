@@ -50,7 +50,7 @@ img { max-width: 100%; display: block; }
 }
 
 .brand-logo {
-  height: 58px;
+  height: 100px;
   width: auto;
   object-fit: contain;
   border-radius: 12px;
