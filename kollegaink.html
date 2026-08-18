@@ -1,96 +1,436 @@
+```html
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PAJTÓK Commercial Kft. – Kollégáink</title>
-  <meta name="description" content="PAJTÓK Commercial Kft. kollégáink oldal." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <title>Kollégáink | PAJTÓK Commercial Kft.</title>
+
+  <meta
+    name="description"
+    content="Ismerje meg a PAJTÓK Commercial Kft. vezetőit, központi munkatársait és telephelyi képviseletvezetőit."
+  />
+
   <link rel="stylesheet" href="styles.css" />
-  <meta name="description" content="Autóalkatrész kereskedelem Egerben és Hatvanban. Az Inter Cars Hungária Kft. franchise partnereként gyors és megbízható kiszolgálás." />
+
+  <style>
+    .team-section {
+      padding: 2rem 0 4rem;
+    }
+
+    .team-group {
+      margin-top: 2.5rem;
+    }
+
+    .team-group-header {
+      margin-bottom: 1.4rem;
+    }
+
+    .team-group-header h2 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+
+    .team-group-header p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 70ch;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.4rem;
+    }
+
+    .team-grid.locations {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .person-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .person-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: 1.2rem;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(16, 167, 239, 0.95),
+          rgba(79, 199, 255, 0.85)
+        );
+      color: #031018;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      box-shadow: 0 10px 30px rgba(16, 167, 239, 0.16);
+    }
+
+    .person-card h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.2rem;
+    }
+
+    .person-role {
+      color: var(--accent-2);
+      font-weight: 700;
+      line-height: 1.5;
+      min-height: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .person-email {
+      margin-top: auto;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .person-email span {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .person-email a {
+      color: var(--accent-2);
+      word-break: break-word;
+      line-height: 1.5;
+    }
+
+    .person-email a:hover {
+      text-decoration: underline;
+    }
+
+    .location-badge {
+      display: inline-block;
+      width: fit-content;
+      margin-bottom: 1rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(16, 167, 239, 0.12);
+      color: var(--accent-2);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    @media (max-width: 1100px) {
+      .team-grid,
+      .team-grid.locations {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .team-grid,
+      .team-grid.locations {
+        grid-template-columns: 1fr;
+      }
+
+      .person-role {
+        min-height: auto;
+      }
+    }
+  </style>
 </head>
+
+
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="index.html">
-        <img src="logo.jpg" alt="PAJTÓK Commercial Kft. logó" class="brand-logo" />
-      </a>
-      <button class="menu-toggle" aria-label="Menü megnyitása">☰</button>
-      <nav class="site-nav">
-        <a href="index.html">Főoldal</a>
-        <a href="esg.html">ESG</a>
-        <a class="active" href="kollegaink.html">Kollégáink</a>
-        <a href="kapcsolat.html">Kapcsolat</a>
-      </nav>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+
+    <a class="brand" href="index.html">
+      <img
+        src="logo.jpg"
+        alt="PAJTÓK Commercial Kft. logó"
+        class="brand-logo"
+      />
+    </a>
+
+    <nav class="site-nav">
+      <a href="index.html">Főoldal</a>
+      <a href="esg.html">ESG</a>
+      <a class="active" href="kollegaink.html">Kollégáink</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<main>
+
+  <section class="page-hero small-hero">
+    <div class="container">
+
+      <p class="eyebrow">Csapatunk</p>
+
+      <h1>Kollégáink</h1>
+
+      <p class="lead narrow">
+        Ismerje meg vezetőinket, központi munkatársainkat
+        és telephelyeink képviseletvezetőit.
+      </p>
+
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="page-hero small-hero">
-      <div class="container">
-        <p class="eyebrow">Kollégáink</p>
-        <h1>Szakértelem, együttműködés, ügyfélfókusz</h1>
-        <p class="lead narrow">
-          A csapat bemutatása később egyszerűen bővíthető névvel, pozícióval, fotóval és elérhetőséggel.
-        </p>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container cards three">
-        <article class="team-card">
-          <div class="avatar">PK</div>
-          <h3>Példa Kolléga</h3>
-          <p class="role">Ügyvezetés / vezető pozíció</p>
-          <p>Ide kerülhet egy rövid bemutatkozás a kolléga szakmai tapasztalatáról és felelősségi köréről.</p>
-        </article>
-        <article class="team-card">
-          <div class="avatar">PK</div>
-          <h3>Példa Kolléga</h3>
-          <p class="role">Értékesítés / kapcsolattartás</p>
-          <p>Ide kerülhet egy rövid bemutatkozás az ügyfélkapcsolati vagy kereskedelmi feladatokról.</p>
-        </article>
-        <article class="team-card">
-          <div class="avatar">PK</div>
-          <h3>Példa Kolléga</h3>
-          <p class="role">Operatív / szakmai terület</p>
-          <p>Ide kerülhet egy rövid összefoglaló a napi működésben betöltött szerepről és kompetenciákról.</p>
-        </article>
-      </div>
-    </section>
+  <section class="team-section">
+    <div class="container">
 
-    <section class="section section-alt">
-      <div class="container split">
-        <div>
-          <p class="eyebrow">Bővíthetőség</p>
-          <h2>További elemek is hozzáadhatók</h2>
-          <ul class="styled-list">
-            <li>egyéni fotók vagy portrék</li>
-            <li>szakterületek szerinti csoportosítás</li>
-            <li>közvetlen e-mail és telefonszám</li>
-            <li>LinkedIn vagy egyéb szakmai linkek</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Fontos</h3>
+      <!-- VEZETÉS ÉS KÖZPONTI FUNKCIÓK -->
+
+      <div class="team-group">
+
+        <div class="team-group-header">
+          <h2>Vezetés és központi funkciók</h2>
+
           <p>
-            Jelenleg ez a szekció mintahelyőrzőkkel készült, hogy az oldal szerkezete már most használható legyen.
-            A valódi nevek és pozíciók később könnyen átírhatók.
+            A vállalat irányítását, kereskedelmi működését,
+            adminisztrációját és belső fejlesztési folyamatait
+            támogató munkatársaink.
           </p>
         </div>
+
+
+        <div class="team-grid">
+
+          <!-- PAJTÓK LÁSZLÓ -->
+
+          <article class="person-card">
+
+            <div class="person-avatar">
+              PL
+            </div>
+
+            <h3>Pajtók László</h3>
+
+            <div class="person-role">
+              Ügyvezető
+            </div>
+
+            <div class="person-email">
+              <span>Email</span>
+
+              <a href="mailto:lpajtok@intercars.eu">
+                lpajtok@intercars.eu
+              </a>
+            </div>
+
+          </article>
+
+
+          <!-- CSORTOS GÁBOR -->
+
+          <article class="person-card">
+
+            <div class="person-avatar">
+              CG
+            </div>
+
+            <h3>Csortos Gábor</h3>
+
+            <div class="person-role">
+              Kereskedelmi vezető
+            </div>
+
+            <div class="person-email">
+              <span>Email</span>
+
+              <a href="mailto:gcsortos@intercars.eu">
+                gcsortos@intercars.eu
+              </a>
+            </div>
+
+          </article>
+
+
+          <!-- VÉKONY KRISZTINA -->
+
+          <article class="person-card">
+
+            <div class="person-avatar">
+              VK
+            </div>
+
+            <h3>Vékony Krisztina</h3>
+
+            <div class="person-role">
+              Vezető adminisztrátor
+            </div>
+
+            <div class="person-email">
+              <span>Email</span>
+
+              <a href="mailto:kvekony@intercars.eu">
+                kvekony@intercars.eu
+              </a>
+            </div>
+
+          </article>
+
+
+          <!-- BOZSIK CSILLA -->
+
+          <article class="person-card">
+
+            <div class="person-avatar">
+              BCS
+            </div>
+
+            <h3>Bozsik Csilla</h3>
+
+            <div class="person-role">
+              Belső képzési és fejlesztési referens
+            </div>
+
+            <div class="person-email">
+              <span>Email</span>
+
+              <a href="mailto:csbozsik@intercars.eu">
+                csbozsik@intercars.eu
+              </a>
+            </div>
+
+          </article>
+
+        </div>
+
       </div>
-    </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container footer-wrap">
-      <p>© <span id="year"></span> PAJTÓK Commercial Kft. Minden jog fenntartva.</p>
-      <p class="footer-note">Statikus, ingyenesen publikálható weboldal-verzió.</p>
+
+      <!-- TELEPHELYI VEZETŐK -->
+
+      <div class="team-group">
+
+        <div class="team-group-header">
+          <h2>Telephelyi vezetők</h2>
+
+          <p>
+            Egeri, hatvani és gyöngyösi képviseleteink
+            helyi működéséért felelős vezető munkatársaink.
+          </p>
+        </div>
+
+
+        <div class="team-grid locations">
+
+          <!-- EGER -->
+
+          <article class="person-card">
+
+            <div class="person-avatar">
+              HA
+            </div>
+
+            <span class="location-badge">
+              Eger
+            </span>
+
+            <h3>Hütter Attila</h3>
+
+            <div class="person-role">
+              Képviseletvezető
+            </div>
+
+            <div class="person-email">
+              <span>Email</span>
+
+              <a href="mailto:ahutter@intercars.eu">
+                ahutter@intercars.eu
+              </a>
+            </div>
+
+          </article>
+
+
+          <!-- HATVAN -->
+
+          <article class="person-card">
+
+            <div class="person-avatar">
+              FB
+            </div>
+
+            <span class="location-badge">
+              Hatvan
+            </span>
+
+            <h3>Fehér Balázs</h3>
+
+            <div class="person-role">
+              Képviseletvezető
+            </div>
+
+            <div class="person-email">
+              <span>Email</span>
+
+              <a href="mailto:bfeher@intercars.eu">
+                bfeher@intercars.eu
+              </a>
+            </div>
+
+          </article>
+
+
+          <!-- GYÖNGYÖS -->
+
+          <article class="person-card">
+
+            <div class="person-avatar">
+              BKD
+            </div>
+
+            <span class="location-badge">
+              Gyöngyös
+            </span>
+
+            <h3>Barta Kristóf Dániel</h3>
+
+            <div class="person-role">
+              Képviseletvezető
+            </div>
+
+            <div class="person-email">
+              <span>Email</span>
+
+              <a href="mailto:kbarta@intercars.eu">
+                kbarta@intercars.eu
+              </a>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
     </div>
-  </footer>
+  </section>
 
-  <script src="script.js"></script>
+</main>
+
+
 </body>
+
 </html>
+```
