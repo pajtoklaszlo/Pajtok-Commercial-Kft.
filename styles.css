@@ -243,8 +243,12 @@ img { max-width: 100%; display: block; }
 }
 
 .contact-grid {
-  align-items: start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: stretch;
 }
+
 
 .contact-card h2 { margin-top: 0; }
 .contact-list {
