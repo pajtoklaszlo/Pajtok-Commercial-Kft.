@@ -13,558 +13,512 @@
   />
 
   <link rel="stylesheet" href="styles.css" />
-
-  <style>
-
-    .home-hero {
-      padding: 5rem 0 4rem;
-    }
-
-    .home-hero-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .home-hero h1 {
-      font-size: clamp(2.7rem, 5.5vw, 5rem);
-      line-height: 1.02;
-      margin: 0 0 1.3rem;
-      letter-spacing: -0.045em;
-    }
-
-    .home-lead {
-      color: var(--muted);
-      font-size: 1.1rem;
-      line-height: 1.8;
-      max-width: 68ch;
-    }
-
-    .hero-info-card {
-      background:
-        linear-gradient(
-          145deg,
-          rgba(16, 167, 239, 0.12),
-          rgba(255,255,255,0.04)
-        );
-      border: 1px solid rgba(79, 199, 255, 0.18);
-      border-radius: 24px;
-      padding: 1.8rem;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-info-card h2 {
-      margin-top: 0;
-      margin-bottom: 1.3rem;
-    }
-
-    .hero-stat {
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .hero-stat:last-child {
-      border-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .hero-stat:first-of-type {
-      padding-top: 0;
-    }
-
-    .hero-stat strong {
-      display: block;
-      color: var(--accent-2);
-      font-size: 1.15rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .hero-stat span {
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .about-home {
-      padding: 4rem 0;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 2rem;
-      align-items: start;
-    }
-
-    .about-copy h2 {
-      font-size: clamp(2rem, 4vw, 3.3rem);
-      margin: 0 0 1.2rem;
-    }
-
-    .about-copy p {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 1.02rem;
-    }
-
-    .facts-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 24px;
-      padding: 1.7rem;
-    }
-
-    .facts-card h3 {
-      margin-top: 0;
-    }
-
-    .fact-row {
-      padding: 0.9rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .fact-row:last-child {
-      border-bottom: 0;
-    }
-
-    .fact-label {
-      display: block;
-      color: var(--muted);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.25rem;
-    }
-
-    .fact-value {
-      color: var(--text);
-      font-weight: 700;
-    }
-
-    .locations-home {
-      padding: 4rem 0;
-    }
-
-    .locations-home h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 1.5rem;
-    }
-
-    .location-grid-home {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.3rem;
-    }
-
-    .location-home-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 22px;
-      padding: 1.5rem;
-    }
-
-    .location-home-card h3 {
-      margin: 0 0 0.7rem;
-      font-size: 1.4rem;
-    }
-
-    .location-home-card p {
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .location-home-card a {
-      color: var(--accent-2);
-      font-weight: 700;
-    }
-
-    .home-links {
-      padding: 4rem 0;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .home-links-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.3rem;
-    }
-
-    .home-link-card {
-      display: block;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 22px;
-      padding: 1.6rem;
-      transition: transform .2s ease, border-color .2s ease;
-    }
-
-    .home-link-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(79,199,255,0.30);
-    }
-
-    .home-link-card h3 {
-      margin-top: 0;
-    }
-
-    .home-link-card p {
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .site-footer {
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 950px) {
-
-      .home-hero-grid,
-      .about-grid,
-      .location-grid-home,
-      .home-links-grid {
-        grid-template-columns: 1fr;
-      }
-
-    }
-
-  </style>
 </head>
-
 
 <body>
 
-<header class="site-header">
+  <header class="site-header">
 
-  <div class="container nav-wrap">
+    <div class="container nav-wrap">
 
-    <a class="brand" href="index.html">
-      <img
-        src="logo.jpg"
-        alt="PAJTÓK Commercial Kft. logó"
-        class="brand-logo"
-      />
-    </a>
+      <a class="brand" href="index.html">
+        <img
+          src="logo.jpg"
+          alt="PAJTÓK Commercial Kft. logó"
+          class="brand-logo"
+        />
+      </a>
 
-    <nav class="site-nav">
-      <a class="active" href="index.html">Főoldal</a>
-      <a href="esg.html">ESG</a>
-      <a href="kollegaink.html">Kollégáink</a>
-      <a href="kapcsolat.html">Kapcsolat</a>
-    </nav>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Menü megnyitása"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
 
-  </div>
+      <nav class="site-nav">
+        <a class="active" href="index.html">Főoldal</a>
+        <a href="esg.html">ESG</a>
+        <a href="kollegaink.html">Kollégáink</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </nav>
 
-</header>
+    </div>
+
+  </header>
 
 
-<main>
+  <main>
 
-  <!-- HERO -->
+    <!-- HERO -->
 
-  <section class="home-hero">
+    <section class="home-hero">
 
-    <div class="container home-hero-grid">
+      <div class="container home-hero-grid">
 
-      <div>
+        <div class="hero-copy">
+
+          <p class="eyebrow">
+            Inter Cars Hungária Kft. franchise partner
+          </p>
+
+          <h1>
+            Professzionális
+            autóalkatrész-kereskedelem
+            <span class="hero-highlight">
+              megbízható háttérrel
+            </span>
+          </h1>
+
+          <p class="home-lead">
+            A PAJTÓK Commercial Kft. autóalkatrész-kereskedelemmel
+            foglalkozó magyar vállalkozás. Az Inter Cars Hungária Kft.
+            franchise partnereként Egerben, Hatvanban és Gyöngyösön
+            szolgáljuk ki partnereinket széles termékkínálattal,
+            szakmai támogatással és kiszámítható háttérrel.
+          </p>
+
+          <div class="hero-actions">
+
+            <a class="btn btn-primary" href="#rolunk">
+              <span>Rólunk</span>
+              <span>→</span>
+            </a>
+
+            <a class="btn btn-secondary" href="kapcsolat.html">
+              <span>Kapcsolat</span>
+              <span>→</span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <aside class="hero-info-card">
+
+          <h2>PAJTÓK Commercial</h2>
+
+          <div class="hero-stat">
+            <strong>2014 óta</strong>
+            <span>működő magyar vállalkozás</span>
+          </div>
+
+          <div class="hero-stat">
+            <strong>3 telephely</strong>
+            <span>Eger · Hatvan · Gyöngyös</span>
+          </div>
+
+          <div class="hero-stat">
+            <strong>Inter Cars</strong>
+            <span>franchise partneri háttér</span>
+          </div>
+
+          <div class="hero-stat">
+            <strong>ESG 2029</strong>
+            <span>
+              konkrét környezeti, társadalmi és
+              vállalatirányítási vállalások
+            </span>
+          </div>
+
+        </aside>
+
+      </div>
+
+
+      <!-- ALSÓ ELŐNY SÁV -->
+
+      <div class="container hero-benefits">
+
+        <div class="benefit-item">
+
+          <div class="benefit-icon">
+            ⚙
+          </div>
+
+          <div>
+            <strong>Széles</strong>
+            <span>termékkínálat</span>
+          </div>
+
+        </div>
+
+
+        <div class="benefit-item">
+
+          <div class="benefit-icon">
+            👥
+          </div>
+
+          <div>
+            <strong>Szakmai</strong>
+            <span>támogatás</span>
+          </div>
+
+        </div>
+
+
+        <div class="benefit-item">
+
+          <div class="benefit-icon">
+            🛡
+          </div>
+
+          <div>
+            <strong>Megbízható</strong>
+            <span>partneri háttér</span>
+          </div>
+
+        </div>
+
+
+        <div class="benefit-item">
+
+          <div class="benefit-icon">
+            ◌
+          </div>
+
+          <div>
+            <strong>Fenntartható</strong>
+            <span>működés (ESG)</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- RÓLUNK -->
+
+    <section class="about-home" id="rolunk">
+
+      <div class="container about-grid">
+
+        <div class="about-copy">
+
+          <p class="eyebrow">
+            Rólunk
+          </p>
+
+          <h2>
+            Helyi jelenlét, stabil vállalati háttér
+          </h2>
+
+          <p>
+            A PAJTÓK Commercial Kft. 2014 óta működő magyar
+            vállalkozás, amelynek fő tevékenysége gépjárműalkatrészek
+            és tartozékok kiskereskedelme.
+          </p>
+
+          <p>
+            Működésünk során fontosnak tartjuk a korrekt partneri
+            kapcsolatokat, a gyors és szakszerű kiszolgálást,
+            valamint azt, hogy ügyfeleink három telephelyünkön
+            egyaránt megbízható szakmai háttérre számíthassanak.
+          </p>
+
+          <p>
+            A fejlődés számunkra nemcsak üzleti növekedést jelent.
+            Folyamatosan fejlesztjük belső folyamatainkat,
+            munkatársaink képzését és fenntarthatósági szemléletünket is.
+          </p>
+
+        </div>
+
+
+        <aside class="facts-card">
+
+          <h3>Cégadatok</h3>
+
+          <div class="fact-row">
+
+            <span class="fact-label">
+              Cégnév
+            </span>
+
+            <span class="fact-value">
+              PAJTÓK Commercial Kft.
+            </span>
+
+          </div>
+
+
+          <div class="fact-row">
+
+            <span class="fact-label">
+              Székhely
+            </span>
+
+            <span class="fact-value">
+              3377 Szihalom, Kossuth Lajos út 90.
+            </span>
+
+          </div>
+
+
+          <div class="fact-row">
+
+            <span class="fact-label">
+              Adószám
+            </span>
+
+            <span class="fact-value">
+              24844127-2-10
+            </span>
+
+          </div>
+
+
+          <div class="fact-row">
+
+            <span class="fact-label">
+              Cégjegyzékszám
+            </span>
+
+            <span class="fact-value">
+              10-09-034506
+            </span>
+
+          </div>
+
+
+          <div class="fact-row">
+
+            <span class="fact-label">
+              Ügyvezető
+            </span>
+
+            <span class="fact-value">
+              Pajtók László
+            </span>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- TELEPHELYEK -->
+
+    <section class="locations-home">
+
+      <div class="container">
 
         <p class="eyebrow">
-          Inter Cars Hungária Kft. franchise partner
+          Telephelyeink
         </p>
-
-        <h1>
-          Professzionális autóalkatrész-kereskedelem megbízható háttérrel
-        </h1>
-
-        <p class="home-lead">
-          A PAJTÓK Commercial Kft. autóalkatrész-kereskedelemmel
-          foglalkozó magyar vállalkozás. Az Inter Cars Hungária Kft.
-          franchise partnereként Egerben, Hatvanban és Gyöngyösön
-          szolgáljuk ki partnereinket széles termékkínálattal,
-          szakmai támogatással és kiszámítható háttérrel.
-        </p>
-
-        <div class="hero-actions">
-
-          <a class="btn btn-primary" href="kapcsolat.html">
-            Telephelyeink
-          </a>
-
-          <a class="btn btn-secondary" href="esg.html">
-            ESG szemléletünk
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <aside class="hero-info-card">
-
-        <h2>PAJTÓK Commercial</h2>
-
-        <div class="hero-stat">
-          <strong>2014 óta</strong>
-          <span>működő magyar vállalkozás</span>
-        </div>
-
-        <div class="hero-stat">
-          <strong>3 telephely</strong>
-          <span>Eger · Hatvan · Gyöngyös</span>
-        </div>
-
-        <div class="hero-stat">
-          <strong>Inter Cars</strong>
-          <span>franchise partneri háttér</span>
-        </div>
-
-        <div class="hero-stat">
-          <strong>ESG 2029</strong>
-          <span>konkrét környezeti, társadalmi és vállalatirányítási vállalások</span>
-        </div>
-
-      </aside>
-
-    </div>
-
-  </section>
-
-
-  <!-- RÓLUNK -->
-
-  <section class="about-home">
-
-    <div class="container about-grid">
-
-      <div class="about-copy">
-
-        <p class="eyebrow">Rólunk</p>
 
         <h2>
-          Helyi jelenlét, stabil vállalati háttér
+          Három városban vagyunk jelen
         </h2>
 
-        <p>
-          A PAJTÓK Commercial Kft. 2014 óta működő magyar
-          vállalkozás, amelynek fő tevékenysége gépjárműalkatrészek
-          és tartozékok kiskereskedelme.
-        </p>
 
-        <p>
-          Működésünk során fontosnak tartjuk a korrekt partneri
-          kapcsolatokat, a gyors és szakszerű kiszolgálást,
-          valamint azt, hogy ügyfeleink három telephelyünkön
-          egyaránt megbízható szakmai háttérre számíthassanak.
-        </p>
+        <div class="location-grid-home">
 
-        <p>
-          A fejlődés számunkra nemcsak üzleti növekedést jelent.
-          Folyamatosan fejlesztjük belső folyamatainkat,
-          munkatársaink képzését és fenntarthatósági szemléletünket is.
-        </p>
+
+          <article class="location-home-card">
+
+            <h3>
+              Eger
+            </h3>
+
+            <p>
+              3300 Eger<br>
+              Kistályai út 12/A
+            </p>
+
+            <a href="kapcsolat.html">
+              Elérhetőségek →
+            </a>
+
+          </article>
+
+
+          <article class="location-home-card">
+
+            <h3>
+              Hatvan
+            </h3>
+
+            <p>
+              3000 Hatvan<br>
+              Balassi Bálint út 94/E
+            </p>
+
+            <a href="kapcsolat.html">
+              Elérhetőségek →
+            </a>
+
+          </article>
+
+
+          <article class="location-home-card">
+
+            <h3>
+              Gyöngyös
+            </h3>
+
+            <p>
+              3200 Gyöngyös<br>
+              Kőkút utca 5.
+            </p>
+
+            <a href="kapcsolat.html">
+              Elérhetőségek →
+            </a>
+
+          </article>
+
+
+        </div>
 
       </div>
 
-
-      <aside class="facts-card">
-
-        <h3>Cégadatok</h3>
-
-        <div class="fact-row">
-          <span class="fact-label">Cégnév</span>
-          <span class="fact-value">
-            PAJTÓK Commercial Kft.
-          </span>
-        </div>
-
-        <div class="fact-row">
-          <span class="fact-label">Székhely</span>
-          <span class="fact-value">
-            3377 Szihalom, Kossuth Lajos út 90.
-          </span>
-        </div>
-
-        <div class="fact-row">
-          <span class="fact-label">Adószám</span>
-          <span class="fact-value">
-            24844127-2-10
-          </span>
-        </div>
-
-        <div class="fact-row">
-          <span class="fact-label">Cégjegyzékszám</span>
-          <span class="fact-value">
-            10-09-034506
-          </span>
-        </div>
-
-        <div class="fact-row">
-          <span class="fact-label">Ügyvezető</span>
-          <span class="fact-value">
-            Pajtók László
-          </span>
-        </div>
-
-      </aside>
-
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- TELEPHELYEK -->
 
-  <section class="locations-home">
+    <!-- FONTOS OLDALAK -->
 
-    <div class="container">
+    <section class="home-links">
 
-      <p class="eyebrow">Telephelyeink</p>
+      <div class="container">
 
-      <h2>Három városban vagyunk jelen</h2>
+        <p class="eyebrow">
+          PAJTÓK Commercial
+        </p>
+
+        <h2>
+          Ismerjen meg bennünket közelebbről
+        </h2>
 
 
-      <div class="location-grid-home">
+        <div class="home-links-grid">
 
-        <article class="location-home-card">
 
-          <h3>Eger</h3>
+          <a
+            class="home-link-card"
+            href="esg.html"
+          >
 
-          <p>
-            3300 Eger<br>
-            Kistályai út 12/A
-          </p>
+            <span class="pill">
+              ESG
+            </span>
 
-          <a href="kapcsolat.html">
-            Elérhetőségek →
+            <h3>
+              Felelős és átlátható működés
+            </h3>
+
+            <p>
+              Környezeti, társadalmi és vállalatirányítási
+              vállalásaink 2029-ig.
+            </p>
+
           </a>
 
-        </article>
 
+          <a
+            class="home-link-card"
+            href="kollegaink.html"
+          >
 
-        <article class="location-home-card">
+            <span class="pill">
+              Csapatunk
+            </span>
 
-          <h3>Hatvan</h3>
+            <h3>
+              Kollégáink
+            </h3>
 
-          <p>
-            3000 Hatvan<br>
-            Balassi Bálint út 94/E
-          </p>
+            <p>
+              Ismerje meg vezetőinket és telephelyeink
+              képviseletvezetőit.
+            </p>
 
-          <a href="kapcsolat.html">
-            Elérhetőségek →
           </a>
 
-        </article>
 
+          <a
+            class="home-link-card"
+            href="kapcsolat.html"
+          >
 
-        <article class="location-home-card">
+            <span class="pill">
+              Kapcsolat
+            </span>
 
-          <h3>Gyöngyös</h3>
+            <h3>
+              Keressen bennünket
+            </h3>
 
-          <p>
-            3200 Gyöngyös<br>
-            Kőkút utca 5.
-          </p>
+            <p>
+              Egeri, hatvani és gyöngyösi telephelyünk
+              címei és elérhetőségei.
+            </p>
 
-          <a href="kapcsolat.html">
-            Elérhetőségek →
           </a>
 
-        </article>
+
+        </div>
 
       </div>
 
-    </div>
+    </section>
 
-  </section>
-
-
-  <!-- FONTOS OLDALAK -->
-
-  <section class="home-links">
-
-    <div class="container">
-
-      <p class="eyebrow">PAJTÓK Commercial</p>
-
-      <h2>
-        Ismerjen meg bennünket közelebbről
-      </h2>
-
-      <div class="home-links-grid">
-
-        <a class="home-link-card" href="esg.html">
-
-          <span class="pill">ESG</span>
-
-          <h3>
-            Felelős és átlátható működés
-          </h3>
-
-          <p>
-            Környezeti, társadalmi és vállalatirányítási
-            vállalásaink 2029-ig.
-          </p>
-
-        </a>
+  </main>
 
 
-        <a class="home-link-card" href="kollegaink.html">
 
-          <span class="pill">Csapatunk</span>
+  <footer class="site-footer">
 
-          <h3>
-            Kollégáink
-          </h3>
+    <div class="container footer-wrap">
 
-          <p>
-            Ismerje meg vezetőinket és telephelyeink
-            képviseletvezetőit.
-          </p>
+      <span>
+        © PAJTÓK Commercial Kft. Minden jog fenntartva.
+      </span>
 
-        </a>
-
-
-        <a class="home-link-card" href="kapcsolat.html">
-
-          <span class="pill">Kapcsolat</span>
-
-          <h3>
-            Keressen bennünket
-          </h3>
-
-          <p>
-            Egeri, hatvani és gyöngyösi telephelyünk
-            címei és elérhetőségei.
-          </p>
-
-        </a>
-
-      </div>
+      <span>
+        3377 Szihalom, Kossuth Lajos út 90.
+      </span>
 
     </div>
 
-  </section>
-
-</main>
+  </footer>
 
 
-<footer class="site-footer">
+  <script>
 
-  <div class="container footer-wrap">
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-nav');
 
-    <span>
-      © PAJTÓK Commercial Kft. Minden jog fenntartva.
-    </span>
+    if (toggle && nav) {
 
-    <span>
-      3377 Szihalom, Kossuth Lajos út 90.
-    </span>
+      toggle.addEventListener('click', () => {
 
-  </div>
+        nav.classList.toggle('open');
 
-</footer>
+        toggle.setAttribute(
+          'aria-expanded',
+          nav.classList.contains('open')
+            ? 'true'
+            : 'false'
+        );
 
+      });
+
+    }
+
+  </script>
 
 </body>
 
