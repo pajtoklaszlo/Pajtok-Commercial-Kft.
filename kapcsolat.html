@@ -1,203 +1,861 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Autóalkatrész Eger, Hatvan és Gyöngyös | PAJTÓK Commercial Kft.</title>
 
-  <link rel="stylesheet" href="styles.css" />
-
   <meta
     name="description"
     content="Autóalkatrész kereskedelem Egerben, Hatvanban és Gyöngyösön. Az Inter Cars Hungária Kft. franchise partnereként gyors és megbízható kiszolgálás."
   />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+
+    /* =========================================================
+       KAPCSOLAT OLDAL
+       ========================================================= */
+
+    .contact-page-top {
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5, 20, 30, 0.97) 0%,
+          rgba(5, 20, 30, 0.92) 34%,
+          rgba(5, 20, 30, 0.66) 60%,
+          rgba(5, 20, 30, 0.22) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(3, 13, 20, 0.10),
+          rgba(3, 13, 20, 0.30)
+        ),
+        url("hero-car.jpg");
+
+      background-size: cover;
+      background-position: center right;
+      background-repeat: no-repeat;
+
+      border-bottom: 1px solid rgba(79, 199, 255, 0.12);
+    }
+
+    .contact-page-top::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at 18% 20%,
+          rgba(16, 167, 239, 0.12),
+          transparent 30%
+        );
+    }
+
+    .contact-page-top .container {
+      position: relative;
+      z-index: 1;
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .contact-hero {
+      padding: 2.4rem 0 1.4rem;
+    }
+
+    .contact-hero-inner {
+      max-width: 760px;
+    }
+
+    .contact-hero .eyebrow {
+      margin-bottom: 0.7rem;
+      font-size: 0.75rem;
+    }
+
+    .contact-hero h1 {
+      margin: 0;
+
+      font-size: clamp(2.7rem, 4vw, 3.8rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .contact-hero .lead {
+      margin-top: 0.85rem;
+      margin-bottom: 0;
+
+      max-width: 650px;
+
+      color: #d1dce3;
+
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+
+    /* =========================================================
+       TELEPHELYEK
+       ========================================================= */
+
+    .contact-section {
+      padding: 0 0 3.2rem;
+    }
+
+    .contact-grid-custom {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .contact-card-custom {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+
+      min-height: 470px;
+
+      padding: 1.25rem;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(8, 34, 48, 0.88),
+          rgba(7, 27, 39, 0.80)
+        );
+
+      border: 1px solid rgba(79,199,255,0.18);
+      border-radius: 20px;
+
+      box-shadow:
+        0 16px 36px rgba(0,0,0,0.24);
+
+      backdrop-filter: blur(10px);
+    }
+
+    .contact-card-custom::before {
+      content: "";
+
+      position: absolute;
+
+      width: 130px;
+      height: 130px;
+
+      right: -55px;
+      top: -55px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(33,198,247,0.11),
+          transparent 70%
+        );
+
+      pointer-events: none;
+    }
+
+    .contact-card-custom h2 {
+      position: relative;
+      z-index: 1;
+
+      margin: 0 0 0.9rem;
+
+      font-size: 1.25rem;
+      line-height: 1.2;
+    }
+
+
+    /* =========================================================
+       ADATBLOKKOK
+       ========================================================= */
+
+    .contact-details {
+      display: grid;
+      gap: 0.8rem;
+
+      margin-bottom: 1rem;
+    }
+
+    .contact-detail {
+      padding-bottom: 0.75rem;
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.07);
+    }
+
+    .contact-detail:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .contact-label {
+      display: block;
+
+      margin-bottom: 0.22rem;
+
+      color: #9fb0ba;
+
+      font-size: 0.68rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .contact-value {
+      color: #edf2f7;
+
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .contact-value a {
+      color: var(--accent-2);
+      text-decoration: none;
+    }
+
+    .contact-value a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================================================
+       TÉRKÉP
+       ========================================================= */
+
+    .map-wrap {
+      margin-top: auto;
+    }
+
+    .map-wrap iframe {
+      display: block;
+
+      width: 100%;
+      height: 185px;
+
+      border: 0;
+      border-radius: 14px;
+    }
+
+
+    /* =========================================================
+       ALSÓ INFO SÁV
+       ========================================================= */
+
+    .contact-note {
+      padding: 2.2rem 0 3.5rem;
+    }
+
+    .contact-note-card {
+      padding: 1.4rem 1.5rem;
+
+      border-radius: 18px;
+
+      border:
+        1px solid rgba(79,199,255,0.14);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(16,167,239,0.08),
+          rgba(255,255,255,0.025)
+        );
+    }
+
+    .contact-note-card h2 {
+      margin: 0 0 0.5rem;
+
+      font-size: 1.35rem;
+    }
+
+    .contact-note-card p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 1100px) {
+
+      .contact-grid-custom {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card-custom {
+        min-height: 0;
+      }
+
+      .map-wrap iframe {
+        height: 220px;
+      }
+
+    }
+
+
+    @media (max-width: 920px) {
+
+      .contact-page-top {
+        background:
+          linear-gradient(
+            180deg,
+            rgba(5,20,30,0.97),
+            rgba(5,20,30,0.88)
+          ),
+          url("hero-car.jpg");
+
+        background-size: cover;
+        background-position: 72% center;
+      }
+
+      .contact-hero {
+        padding: 2.2rem 0 1.2rem;
+      }
+
+    }
+
+
+    @media (max-width: 700px) {
+
+      .contact-hero h1 {
+        font-size: clamp(2.5rem, 11vw, 3.6rem);
+      }
+
+      .contact-card-custom {
+        padding: 1rem;
+      }
+
+      .map-wrap iframe {
+        height: 200px;
+      }
+
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-<header class="site-header">
-  <div class="container nav-wrap">
+  <!-- =====================================================
+       FEJLÉC
+       ===================================================== -->
 
-    <a class="brand" href="index.html">
-      <img
-        src="logo.jpg"
-        alt="PAJTÓK Commercial Kft. logó"
-        class="brand-logo"
-      />
-    </a>
+  <header class="site-header">
 
-    <nav class="site-nav">
-      <a href="index.html">Főoldal</a>
-      <a href="esg.html">ESG</a>
-      <a href="kollegaink.html">Kollégáink</a>
-      <a class="active" href="kapcsolat.html">Kapcsolat</a>
-    </nav>
+    <div class="container nav-wrap">
 
-  </div>
-</header>
+      <a class="brand" href="index.html">
+
+        <img
+          src="logo.jpg"
+          alt="PAJTÓK Commercial Kft. logó"
+          class="brand-logo"
+        />
+
+      </a>
 
 
-<main>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Menü megnyitása"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
 
-  <section class="container">
 
-    <h1 style="margin-bottom: 30px;">Kapcsolat</h1>
+      <nav class="site-nav">
 
-    <div class="contact-grid">
+        <a href="index.html">
+          Főoldal
+        </a>
 
+        <a href="esg.html">
+          ESG
+        </a>
 
-      <!-- =====================================================
-           EGER
-      ====================================================== -->
+        <a href="kollegaink.html">
+          Kollégáink
+        </a>
 
-      <div class="contact-card">
+        <a
+          class="active"
+          href="kapcsolat.html"
+        >
+          Kapcsolat
+        </a>
 
-        <h2>Eger</h2>
+      </nav>
 
-        <p>
-          <strong>Cím:</strong>
-          3300 Eger, Kistályai út 12/A
-        </p>
+    </div>
 
-        <p>
-          <strong>Telefon:</strong><br>
-
-          <a href="tel:+3636510161">
-            +36 36 510 161
-          </a>
-          <br>
-
-          <a href="tel:+3636510162">
-            +36 36 510 162
-          </a>
-        </p>
-
-        <p>
-          <strong>Email:</strong><br>
-
-          <a href="mailto:eger@intercars.eu">
-            eger@intercars.eu
-          </a>
-        </p>
-
-        <p>
-          <strong>Nyitvatartás:</strong><br>
-          H–P: 08:00–17:00<br>
-          Szombat: 08:00–13:00
-        </p>
-
-        <iframe
-          src="https://www.google.com/maps?q=3300%20Eger,%20Kistályai%20út%2012/A&output=embed"
-          loading="lazy"
-          title="PAJTÓK Commercial Kft. Eger térkép">
-        </iframe>
-
-      </div>
+  </header>
 
 
 
-      <!-- =====================================================
-           HATVAN
-      ====================================================== -->
+  <main>
 
-      <div class="contact-card">
 
-        <h2>Hatvan</h2>
+    <!-- =====================================================
+         HÁTTÉRKÉPES FELSŐ RÉSZ
+         ===================================================== -->
 
-        <p>
-          <strong>Cím:</strong>
-          3000 Hatvan, Balassi Bálint út 94/E
-        </p>
+    <div class="contact-page-top">
 
-        <p>
-          <strong>Telefon:</strong><br>
 
-          <a href="tel:+3637541525">
-            +36 37 541 525
-          </a>
-          <br>
+      <!-- HERO -->
 
-          <a href="tel:+3637344400">
-            +36 37 344 400
-          </a>
-        </p>
+      <section class="contact-hero">
 
-        <p>
-          <strong>Email:</strong><br>
+        <div class="container">
 
-          <a href="mailto:hatvan@intercars.eu">
-            hatvan@intercars.eu
-          </a>
-        </p>
+          <div class="contact-hero-inner">
 
-        <p>
-          <strong>Nyitvatartás:</strong><br>
-          H–P: 08:00–17:00<br>
-          Szombat: 08:00–13:00
-        </p>
+            <p class="eyebrow">
+              Elérhetőségeink
+            </p>
 
-        <iframe
-          src="https://www.google.com/maps?q=3000%20Hatvan,%20Balassi%20Bálint%20út%2094/E&output=embed"
-          loading="lazy"
-          title="PAJTÓK Commercial Kft. Hatvan térkép">
-        </iframe>
+            <h1>
+              Kapcsolat
+            </h1>
 
-      </div>
+            <p class="lead">
+              Keressen bennünket egri, hatvani vagy gyöngyösi
+              telephelyünkön. Kollégáink készséggel állnak rendelkezésére.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
 
 
 
       <!-- =====================================================
-           GYÖNGYÖS
-      ====================================================== -->
+           TELEPHELYEK
+           ===================================================== -->
 
-      <div class="contact-card">
+      <section class="contact-section">
 
-        <h2>Gyöngyös</h2>
+        <div class="container">
 
-        <p>
-          <strong>Cím:</strong>
-          3200 Gyöngyös, Kőkút utca 5.
-        </p>
+          <div class="contact-grid-custom">
 
-        <p>
-          <strong>Telefon:</strong><br>
 
-          <a href="tel:+3637511050">
-            +36 37 511 050
-          </a>
-        </p>
+            <!-- =================================================
+                 EGER
+                 ================================================= -->
 
-        <p>
-          <strong>Email:</strong><br>
+            <article class="contact-card-custom">
 
-          <a href="mailto:gyongyos@intercars.eu">
-            gyongyos@intercars.eu
-          </a>
-        </p>
+              <h2>
+                Eger
+              </h2>
 
-        <p>
-          <strong>Nyitvatartás:</strong><br>
-          H–P: 08:00–17:00<br>
-          Szombat: 08:00–13:00
-        </p>
 
-        <iframe
-          src="https://www.google.com/maps?q=3200%20Gy%C3%B6ngy%C3%B6s,%20K%C5%91k%C3%BAt%20utca%205&output=embed"
-          loading="lazy"
-          title="PAJTÓK Commercial Kft. Gyöngyös térkép">
-        </iframe>
+              <div class="contact-details">
 
-      </div>
+
+                <div class="contact-detail">
+
+                  <span class="contact-label">
+                    Cím
+                  </span>
+
+                  <div class="contact-value">
+                    3300 Eger, Kistályai út 12/A
+                  </div>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                  <span class="contact-label">
+                    Telefon
+                  </span>
+
+                  <div class="contact-value">
+
+                    <a href="tel:+3636510161">
+                      +36 36 510 161
+                    </a>
+
+                    <br>
+
+                    <a href="tel:+3636510162">
+                      +36 36 510 162
+                    </a>
+
+                  </div>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                  <span class="contact-label">
+                    Email
+                  </span>
+
+                  <div class="contact-value">
+
+                    <a href="mailto:eger@intercars.eu">
+                      eger@intercars.eu
+                    </a>
+
+                  </div>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                  <span class="contact-label">
+                    Nyitvatartás
+                  </span>
+
+                  <div class="contact-value">
+                    H–P: 08:00–17:00<br>
+                    Szombat: 08:00–13:00
+                  </div>
+
+                </div>
+
+
+              </div>
+
+
+              <div class="map-wrap">
+
+                <iframe
+                  src="https://www.google.com/maps?q=3300%20Eger,%20Kistályai%20út%2012/A&output=embed"
+                  loading="lazy"
+                  title="PAJTÓK Commercial Kft. Eger térkép">
+                </iframe>
+
+              </div>
+
+
+            </article>
+
+
+
+            <!-- =================================================
+                 HATVAN
+                 ================================================= -->
+
+            <article class="contact-card-custom">
+
+              <h2>
+                Hatvan
+              </h2>
+
+
+              <div class="contact-details">
+
+
+                <div class="contact-detail">
+
+                  <span class="contact-label">
+                    Cím
+                  </span>
+
+                  <div class="contact-value">
+                    3000 Hatvan, Balassi Bálint út 94/E
+                  </div>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                  <span class="contact-label">
+                    Telefon
+                  </span>
+
+                  <div class="contact-value">
+
+                    <a href="tel:+3637541525">
+                      +36 37 541 525
+                    </a>
+
+                    <br>
+
+                    <a href="tel:+3637344400">
+                      +36 37 344 400
+                    </a>
+
+                  </div>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                  <span class="contact-label">
+                    Email
+                  </span>
+
+                  <div class="contact-value">
+
+                    <a href="mailto:hatvan@intercars.eu">
+                      hatvan@intercars.eu
+                    </a>
+
+                  </div>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                  <span class="contact-label">
+                    Nyitvatartás
+                  </span>
+
+                  <div class="contact-value">
+                    H–P: 08:00–17:00<br>
+                    Szombat: 08:00–13:00
+                  </div>
+
+                </div>
+
+
+              </div>
+
+
+              <div class="map-wrap">
+
+                <iframe
+                  src="https://www.google.com/maps?q=3000%20Hatvan,%20Balassi%20Bálint%20út%2094/E&output=embed"
+                  loading="lazy"
+                  title="PAJTÓK Commercial Kft. Hatvan térkép">
+                </iframe>
+
+              </div>
+
+
+            </article>
+
+
+
+            <!-- =================================================
+                 GYÖNGYÖS
+                 ================================================= -->
+
+            <article class="contact-card-custom">
+
+              <h2>
+                Gyöngyös
+              </h2>
+
+
+              <div class="contact-details">
+
+
+                <div class="contact-detail">
+
+                  <span class="contact-label">
+                    Cím
+                  </span>
+
+                  <div class="contact-value">
+                    3200 Gyöngyös, Kőkút utca 5.
+                  </div>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                  <span class="contact-label">
+                    Telefon
+                  </span>
+
+                  <div class="contact-value">
+
+                    <a href="tel:+3637511050">
+                      +36 37 511 050
+                    </a>
+
+                  </div>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                  <span class="contact-label">
+                    Email
+                  </span>
+
+                  <div class="contact-value">
+
+                    <a href="mailto:gyongyos@intercars.eu">
+                      gyongyos@intercars.eu
+                    </a>
+
+                  </div>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                  <span class="contact-label">
+                    Nyitvatartás
+                  </span>
+
+                  <div class="contact-value">
+                    H–P: 08:00–17:00<br>
+                    Szombat: 08:00–13:00
+                  </div>
+
+                </div>
+
+
+              </div>
+
+
+              <div class="map-wrap">
+
+                <iframe
+                  src="https://www.google.com/maps?q=3200%20Gy%C3%B6ngy%C3%B6s,%20K%C5%91k%C3%BAt%20utca%205&output=embed"
+                  loading="lazy"
+                  title="PAJTÓK Commercial Kft. Gyöngyös térkép">
+                </iframe>
+
+              </div>
+
+
+            </article>
+
+
+          </div>
+
+        </div>
+
+      </section>
 
 
     </div>
 
-  </section>
 
-</main>
+
+    <!-- =====================================================
+         ALSÓ INFORMÁCIÓ
+         ===================================================== -->
+
+    <section class="contact-note">
+
+      <div class="container">
+
+        <div class="contact-note-card">
+
+          <h2>
+            Három város, egy megbízható háttér
+          </h2>
+
+          <p>
+            Egeri, hatvani és gyöngyösi telephelyeinken
+            autóalkatrész-kereskedelmi szolgáltatásainkkal,
+            szakmai támogatással és az Inter Cars franchise
+            partneri hátterével várjuk partnereinket.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-wrap">
+
+      <span>
+        © PAJTÓK Commercial Kft. Minden jog fenntartva.
+      </span>
+
+      <span>
+        3377 Szihalom, Kossuth Lajos út 90.
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       MOBIL MENÜ
+       ===================================================== -->
+
+  <script>
+
+    const toggle =
+      document.querySelector('.menu-toggle');
+
+    const nav =
+      document.querySelector('.site-nav');
+
+    if (toggle && nav) {
+
+      toggle.addEventListener(
+        'click',
+        () => {
+
+          nav.classList.toggle('open');
+
+          toggle.setAttribute(
+            'aria-expanded',
+            nav.classList.contains('open')
+              ? 'true'
+              : 'false'
+          );
+
+        }
+      );
+
+    }
+
+  </script>
 
 
 </body>
-</html>
 
+</html>
