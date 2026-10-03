@@ -17,7 +17,7 @@
   <style>
 
     /* =========================================================
-       KAPCSOLAT OLDAL
+       KAPCSOLAT OLDAL – KOMPAKT VERZIÓ
        ========================================================= */
 
     .contact-page-top {
@@ -67,40 +67,16 @@
 
 
     /* =========================================================
-       HERO
+       FELSŐ JELÖLÉS
        ========================================================= */
 
-    .contact-hero {
-      padding: 2.4rem 0 1.4rem;
+    .contact-kicker {
+      padding: 1.8rem 0 1rem;
     }
 
-    .contact-hero-inner {
-      max-width: 760px;
-    }
-
-    .contact-hero .eyebrow {
-      margin-bottom: 0.7rem;
-      font-size: 0.75rem;
-    }
-
-    .contact-hero h1 {
+    .contact-kicker .eyebrow {
       margin: 0;
-
-      font-size: clamp(2.7rem, 4vw, 3.8rem);
-      line-height: 1;
-      letter-spacing: -0.045em;
-    }
-
-    .contact-hero .lead {
-      margin-top: 0.85rem;
-      margin-bottom: 0;
-
-      max-width: 650px;
-
-      color: #d1dce3;
-
-      font-size: 0.95rem;
-      line-height: 1.55;
+      font-size: 0.75rem;
     }
 
 
@@ -109,7 +85,7 @@
        ========================================================= */
 
     .contact-section {
-      padding: 0 0 3.2rem;
+      padding: 0 0 2.8rem;
     }
 
     .contact-grid-custom {
@@ -124,17 +100,17 @@
       display: flex;
       flex-direction: column;
 
-      min-height: 470px;
+      min-height: 440px;
 
-      padding: 1.25rem;
+      padding: 1.2rem;
 
       overflow: hidden;
 
       background:
         linear-gradient(
           180deg,
-          rgba(8, 34, 48, 0.88),
-          rgba(7, 27, 39, 0.80)
+          rgba(8, 34, 48, 0.90),
+          rgba(7, 27, 39, 0.82)
         );
 
       border: 1px solid rgba(79,199,255,0.18);
@@ -144,6 +120,11 @@
         0 16px 36px rgba(0,0,0,0.24);
 
       backdrop-filter: blur(10px);
+
+      transition:
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        background 0.22s ease;
     }
 
     .contact-card-custom::before {
@@ -151,8 +132,8 @@
 
       position: absolute;
 
-      width: 130px;
-      height: 130px;
+      width: 125px;
+      height: 125px;
 
       right: -55px;
       top: -55px;
@@ -169,13 +150,27 @@
       pointer-events: none;
     }
 
+    .contact-card-custom:hover {
+      transform: translateY(-3px);
+
+      border-color:
+        rgba(33,198,247,0.38);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(8,44,60,0.94),
+          rgba(6,30,42,0.86)
+        );
+    }
+
     .contact-card-custom h2 {
       position: relative;
       z-index: 1;
 
-      margin: 0 0 0.9rem;
+      margin: 0 0 0.8rem;
 
-      font-size: 1.25rem;
+      font-size: 1.18rem;
       line-height: 1.2;
     }
 
@@ -186,13 +181,13 @@
 
     .contact-details {
       display: grid;
-      gap: 0.8rem;
+      gap: 0.7rem;
 
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
     }
 
     .contact-detail {
-      padding-bottom: 0.75rem;
+      padding-bottom: 0.65rem;
 
       border-bottom:
         1px solid rgba(255,255,255,0.07);
@@ -206,11 +201,11 @@
     .contact-label {
       display: block;
 
-      margin-bottom: 0.22rem;
+      margin-bottom: 0.18rem;
 
       color: #9fb0ba;
 
-      font-size: 0.68rem;
+      font-size: 0.64rem;
       font-weight: 700;
 
       text-transform: uppercase;
@@ -220,8 +215,8 @@
     .contact-value {
       color: #edf2f7;
 
-      font-size: 0.86rem;
-      line-height: 1.5;
+      font-size: 0.82rem;
+      line-height: 1.45;
     }
 
     .contact-value a {
@@ -246,7 +241,7 @@
       display: block;
 
       width: 100%;
-      height: 185px;
+      height: 170px;
 
       border: 0;
       border-radius: 14px;
@@ -254,15 +249,15 @@
 
 
     /* =========================================================
-       ALSÓ INFO SÁV
+       ALSÓ INFORMÁCIÓ
        ========================================================= */
 
     .contact-note {
-      padding: 2.2rem 0 3.5rem;
+      padding: 2rem 0 3.2rem;
     }
 
     .contact-note-card {
-      padding: 1.4rem 1.5rem;
+      padding: 1.35rem 1.5rem;
 
       border-radius: 18px;
 
@@ -278,9 +273,9 @@
     }
 
     .contact-note-card h2 {
-      margin: 0 0 0.5rem;
+      margin: 0 0 0.45rem;
 
-      font-size: 1.35rem;
+      font-size: 1.25rem;
     }
 
     .contact-note-card p {
@@ -288,8 +283,8 @@
 
       color: var(--muted);
 
-      font-size: 0.9rem;
-      line-height: 1.6;
+      font-size: 0.86rem;
+      line-height: 1.55;
     }
 
 
@@ -308,7 +303,7 @@
       }
 
       .map-wrap iframe {
-        height: 220px;
+        height: 210px;
       }
 
     }
@@ -329,8 +324,8 @@
         background-position: 72% center;
       }
 
-      .contact-hero {
-        padding: 2.2rem 0 1.2rem;
+      .contact-kicker {
+        padding: 1.5rem 0 0.9rem;
       }
 
     }
@@ -338,16 +333,12 @@
 
     @media (max-width: 700px) {
 
-      .contact-hero h1 {
-        font-size: clamp(2.5rem, 11vw, 3.6rem);
-      }
-
       .contact-card-custom {
         padding: 1rem;
       }
 
       .map-wrap iframe {
-        height: 200px;
+        height: 190px;
       }
 
     }
@@ -420,34 +411,21 @@
 
 
     <!-- =====================================================
-         HÁTTÉRKÉPES FELSŐ RÉSZ
+         HÁTTÉRKÉPES KAPCSOLAT BLOKK
          ===================================================== -->
 
     <div class="contact-page-top">
 
 
-      <!-- HERO -->
+      <!-- FELSŐ FELIRAT -->
 
-      <section class="contact-hero">
+      <section class="contact-kicker">
 
         <div class="container">
 
-          <div class="contact-hero-inner">
-
-            <p class="eyebrow">
-              Elérhetőségeink
-            </p>
-
-            <h1>
-              Kapcsolat
-            </h1>
-
-            <p class="lead">
-              Keressen bennünket egri, hatvani vagy gyöngyösi
-              telephelyünkön. Kollégáink készséggel állnak rendelkezésére.
-            </p>
-
-          </div>
+          <p class="eyebrow">
+            Elérhetőségeink
+          </p>
 
         </div>
 
