@@ -1493,3 +1493,170 @@ img {
   }
 
 }
+/* =========================================================
+   FŐOLDAL HERO – referencia finomhangolás
+   ========================================================= */
+
+.site-header .nav-wrap {
+  min-height: 110px;
+}
+
+.brand-logo {
+  height: 86px;
+}
+
+
+/* HERO MAGASSÁG ÉS ELRENDEZÉS */
+
+.home-hero {
+  min-height: 680px;
+  padding: 4rem 0 0;
+  background-position: center right;
+}
+
+.home-hero-grid {
+  grid-template-columns: minmax(0, 1.25fr) 375px;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+
+/* BAL OLDALI SZÖVEG */
+
+.hero-copy {
+  max-width: 690px;
+}
+
+.home-hero h1 {
+  max-width: 680px;
+  font-size: clamp(3rem, 4.25vw, 4.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.hero-highlight {
+  white-space: nowrap;
+}
+
+.home-lead {
+  max-width: 650px;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 1.4rem;
+}
+
+
+/* JOBB OLDALI INFORMÁCIÓS KÁRTYA */
+
+.hero-info-card {
+  width: 100%;
+  max-width: 375px;
+  padding: 1.8rem 2rem;
+  border-radius: 22px;
+}
+
+.hero-info-card h2 {
+  font-size: 1.45rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero-stat {
+  padding: 0.8rem 0;
+}
+
+.hero-stat strong {
+  font-size: 1.08rem;
+}
+
+.hero-stat span {
+  font-size: 0.95rem;
+}
+
+
+/* GOMBOK */
+
+.hero-actions {
+  margin-top: 1.5rem;
+}
+
+.btn {
+  min-width: 165px;
+  padding: 0.95rem 1.3rem;
+}
+
+
+/* ALSÓ 4 ELEMES SÁV */
+
+.hero-benefits {
+  margin-top: 3rem;
+  min-height: 100px;
+  border-radius: 0;
+  border-left: 1px solid rgba(83, 197, 248, 0.28);
+  border-right: 1px solid rgba(83, 197, 248, 0.28);
+  border-bottom: 0;
+  width: 100%;
+}
+
+.benefit-item {
+  min-height: 98px;
+  padding: 1rem 1.6rem;
+}
+
+.benefit-item strong {
+  font-size: 1rem;
+}
+
+.benefit-item span:last-child {
+  font-size: 0.95rem;
+}
+
+
+/* NAGY KIJELZŐN NE LEGYEN TÚL NAGY */
+
+@media (min-width: 1500px) {
+
+  .home-hero h1 {
+    font-size: 4.25rem;
+  }
+
+  .hero-copy {
+    max-width: 700px;
+  }
+
+}
+
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+
+  .hero-highlight {
+    white-space: normal;
+  }
+
+  .home-hero-grid {
+    grid-template-columns: 1fr 340px;
+    gap: 2rem;
+  }
+
+}
+
+
+/* MOBIL */
+
+@media (max-width: 920px) {
+
+  .home-hero {
+    min-height: auto;
+    padding: 3.5rem 0 1.5rem;
+  }
+
+  .home-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-info-card {
+    max-width: 100%;
+  }
+
+}
