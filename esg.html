@@ -17,7 +17,7 @@
   <style>
 
     /* =========================================================
-       ESG OLDAL – SAJÁT STÍLUSOK
+       ESG OLDAL – KOMPAKT, EGYSÉGES VERZIÓ
        ========================================================= */
 
     .esg-top-bg {
@@ -30,16 +30,15 @@
       background:
         linear-gradient(
           90deg,
-          rgba(3, 10, 16, 0.96) 0%,
-          rgba(3, 10, 16, 0.90) 34%,
-          rgba(3, 10, 16, 0.68) 58%,
-          rgba(3, 10, 16, 0.30) 82%,
-          rgba(3, 10, 16, 0.12) 100%
+          rgba(3, 10, 16, 0.97) 0%,
+          rgba(3, 10, 16, 0.92) 34%,
+          rgba(3, 10, 16, 0.66) 60%,
+          rgba(3, 10, 16, 0.22) 100%
         ),
         linear-gradient(
           180deg,
-          rgba(5, 7, 11, 0.12) 0%,
-          rgba(5, 7, 11, 0.34) 100%
+          rgba(5, 7, 11, 0.10) 0%,
+          rgba(5, 7, 11, 0.30) 100%
         ),
         url("hero-car.jpg");
 
@@ -57,13 +56,8 @@
       background:
         radial-gradient(
           circle at 18% 22%,
-          rgba(16, 167, 239, 0.14),
+          rgba(16, 167, 239, 0.12),
           transparent 28%
-        ),
-        linear-gradient(
-          90deg,
-          rgba(16, 167, 239, 0.05) 0%,
-          transparent 36%
         );
     }
 
@@ -73,101 +67,138 @@
     }
 
 
-    /* HERO */
+    /* =========================================================
+       HERO
+       ========================================================= */
 
     .esg-hero {
-      padding: 5rem 0 2.2rem;
+      padding: 2.4rem 0 1.2rem;
     }
 
     .esg-hero-inner {
-      max-width: 1000px;
+      max-width: 760px;
+    }
+
+    .esg-hero .eyebrow {
+      margin-bottom: 0.7rem;
+      font-size: 0.75rem;
     }
 
     .esg-hero h1 {
       margin: 0;
-      max-width: 950px;
 
-      font-size: clamp(3rem, 5.2vw, 5rem);
+      max-width: 760px;
+
+      font-size: clamp(2.7rem, 4vw, 3.8rem);
       line-height: 1;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.045em;
     }
 
     .esg-hero .lead {
-      margin-top: 1.5rem;
-      max-width: 720px;
-      color: #d3dde4;
+      margin-top: 0.85rem;
+      margin-bottom: 0;
+
+      max-width: 630px;
+
+      color: #d1dce3;
+
+      font-size: 0.95rem;
+      line-height: 1.55;
     }
 
 
-    /* PDF BLOKK */
+    /* =========================================================
+       PDF LETÖLTÉS
+       ========================================================= */
 
     .esg-download {
-      padding: 0 0 2.6rem;
+      padding: 0.7rem 0 1.4rem;
     }
 
     .esg-download-inner {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.9rem;
       flex-wrap: wrap;
     }
 
     .esg-download .btn {
-      min-width: 280px;
+      min-width: 245px;
+
+      padding: 0.8rem 1.05rem;
+
+      border-radius: 15px;
+
+      font-size: 0.9rem;
     }
 
     .download-note {
       color: #c6d2da;
-      font-size: 0.95rem;
+
+      font-size: 0.82rem;
     }
 
 
-    /* ESG KÁRTYÁK */
+    /* =========================================================
+       ESG KÁRTYÁK
+       ========================================================= */
 
     .esg-pillars {
-      padding: 0.8rem 0 4.5rem;
+      padding: 0 0 2.8rem;
     }
 
     .esg-grid {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.4rem;
+
+      gap: 1rem;
     }
 
     .esg-card-link {
       display: block;
-      color: inherit;
-      text-decoration: none;
+
       height: 100%;
+
+      color: inherit;
+
+      text-decoration: none;
     }
 
     .esg-card {
       position: relative;
 
+      display: flex;
+      flex-direction: column;
+
+      min-height: 230px;
       height: 100%;
 
-      padding: 2rem;
+      padding: 1.2rem;
+
+      overflow: hidden;
 
       background:
         linear-gradient(
           180deg,
-          rgba(8, 34, 48, 0.86),
-          rgba(7, 27, 39, 0.78)
+          rgba(8, 34, 48, 0.88),
+          rgba(7, 27, 39, 0.80)
         );
 
-      border: 1px solid rgba(79,199,255,0.20);
-      border-radius: 24px;
+      border:
+        1px solid rgba(79,199,255,0.20);
 
-      box-shadow: 0 20px 50px rgba(0,0,0,0.28);
+      border-radius: 20px;
+
+      box-shadow:
+        0 16px 36px rgba(0,0,0,0.24);
 
       backdrop-filter: blur(10px);
 
-      overflow: hidden;
-
       transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        background 0.25s ease;
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        background 0.22s ease;
     }
 
     .esg-card::before {
@@ -175,18 +206,18 @@
 
       position: absolute;
 
-      width: 180px;
-      height: 180px;
+      width: 125px;
+      height: 125px;
 
-      right: -70px;
-      top: -80px;
+      right: -55px;
+      top: -55px;
 
       border-radius: 50%;
 
       background:
         radial-gradient(
           circle,
-          rgba(33,198,247,0.13),
+          rgba(33,198,247,0.12),
           rgba(33,198,247,0)
         );
 
@@ -194,26 +225,29 @@
     }
 
     .esg-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-3px);
 
-      border-color: rgba(33,198,247,0.42);
+      border-color:
+        rgba(33,198,247,0.40);
 
       background:
         linear-gradient(
           180deg,
-          rgba(8, 45, 62, 0.90),
-          rgba(7, 30, 42, 0.82)
+          rgba(8, 44, 60, 0.94),
+          rgba(6, 30, 42, 0.86)
         );
     }
 
 
-    /* ESG IKON */
+    /* =========================================================
+       ESG IKON
+       ========================================================= */
 
     .esg-icon {
-      width: 52px;
-      height: 52px;
+      width: 46px;
+      height: 46px;
 
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.75rem;
 
       display: grid;
       place-items: center;
@@ -231,8 +265,8 @@
     }
 
     .esg-icon svg {
-      width: 27px;
-      height: 27px;
+      width: 23px;
+      height: 23px;
 
       fill: none !important;
       stroke: currentColor !important;
@@ -243,13 +277,23 @@
     }
 
 
+    /* =========================================================
+       ESG KÁRTYA SZÖVEGEK
+       ========================================================= */
+
     .esg-card .pill {
-      margin-bottom: 1rem;
+      margin-bottom: 0.65rem;
+
+      padding: 0.26rem 0.58rem;
+
+      font-size: 0.7rem;
     }
 
     .esg-card h2 {
-      margin: 0 0 1rem;
-      font-size: 1.45rem;
+      margin: 0 0 0.55rem;
+
+      font-size: 1.05rem;
+      line-height: 1.25;
     }
 
     .esg-card p {
@@ -257,72 +301,77 @@
 
       color: #c3d0d8;
 
-      line-height: 1.75;
+      font-size: 0.84rem;
+      line-height: 1.55;
     }
 
     .esg-card-arrow {
       display: inline-flex;
 
-      margin-top: 1.7rem;
+      margin-top: auto;
+      padding-top: 0.8rem;
 
       color: var(--accent-2);
 
+      font-size: 0.82rem;
       font-weight: 800;
     }
 
 
-    /* ALSÓ ESG BLOKK */
+    /* =========================================================
+       ALSÓ ESG BLOKK
+       ========================================================= */
 
     .esg-bottom {
-      padding: 3rem 0 5rem;
+      padding: 2.3rem 0 3.5rem;
     }
 
     .esg-bottom-card {
-      padding: 2.2rem;
+      padding: 1.6rem;
 
       border:
-        1px solid
-        rgba(79,199,255,0.16);
+        1px solid rgba(79,199,255,0.16);
 
-      border-radius: 24px;
+      border-radius: 20px;
 
       background:
         linear-gradient(
           135deg,
-          rgba(16,167,239,0.10),
-          rgba(255,255,255,0.035)
+          rgba(16,167,239,0.09),
+          rgba(255,255,255,0.03)
         );
 
-      box-shadow:
-        var(--shadow);
+      box-shadow: var(--shadow);
+    }
+
+    .esg-bottom-card .eyebrow {
+      margin-bottom: 0.6rem;
+      font-size: 0.72rem;
     }
 
     .esg-bottom-card h2 {
-      margin:
-        0 0
-        1rem;
+      margin: 0 0 0.65rem;
 
-      font-size:
-        clamp(
-          1.8rem,
-          3vw,
-          2.6rem
-        );
+      font-size: clamp(1.5rem, 2.2vw, 2rem);
+
+      line-height: 1.15;
     }
 
     .esg-bottom-card p {
       margin: 0;
 
-      max-width: 900px;
+      max-width: 880px;
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
-      line-height: 1.8;
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
 
 
-    /* MOBIL */
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
 
     @media (max-width: 920px) {
 
@@ -331,9 +380,7 @@
       }
 
       .esg-hero {
-        padding:
-          3.5rem 0
-          2rem;
+        padding: 2.2rem 0 1.2rem;
       }
 
       .esg-top-bg {
@@ -350,6 +397,29 @@
         background-position: 72% center;
       }
 
+      .esg-download-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+    }
+
+
+    @media (max-width: 700px) {
+
+      .esg-hero h1 {
+        font-size: clamp(2.5rem, 11vw, 3.6rem);
+      }
+
+      .esg-download .btn {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .esg-card {
+        min-height: 0;
+      }
+
     }
 
   </style>
@@ -359,7 +429,9 @@
 <body>
 
 
-  <!-- FEJLÉC -->
+  <!-- =====================================================
+       FEJLÉC
+       ===================================================== -->
 
   <header class="site-header">
 
@@ -428,7 +500,7 @@
     <div class="esg-top-bg">
 
 
-      <!-- ESG HERO -->
+      <!-- HERO -->
 
       <section class="esg-hero">
 
@@ -457,7 +529,9 @@
 
 
 
-      <!-- PDF LETÖLTÉS -->
+      <!-- =====================================================
+           PDF LETÖLTÉS
+           ===================================================== -->
 
       <section class="esg-download">
 
@@ -486,7 +560,9 @@
 
 
 
-      <!-- ESG 3 PILLÉR -->
+      <!-- =====================================================
+           ESG 3 PILLÉR
+           ===================================================== -->
 
       <section class="esg-pillars">
 
@@ -706,7 +782,9 @@
 
 
 
-  <!-- FOOTER -->
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
 
   <footer class="site-footer">
 
@@ -726,7 +804,9 @@
 
 
 
-  <!-- MOBIL MENÜ -->
+  <!-- =====================================================
+       MOBIL MENÜ
+       ===================================================== -->
 
   <script>
 
