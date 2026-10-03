@@ -1815,3 +1815,34 @@ img {
   fill: none !important;
   stroke: #21c6f7 !important;
 }
+/* ESG OLDAL FINOMHANGOLÁS */
+
+.esg-hero {
+  padding-top: 4.2rem;
+  padding-bottom: 1.8rem;
+}
+
+.esg-hero h1 {
+  font-size: clamp(2.8rem, 4.5vw, 4.4rem);
+}
+
+.esg-download {
+  padding-bottom: 2rem;
+}
+
+.esg-pillars {
+  padding-top: 0.4rem;
+  padding-bottom: 3.5rem;
+}
+
+.esg-card {
+  padding: 1.7rem;
+}
+
+.esg-card h2 {
+  font-size: 1.35rem;
+}
+
+.esg-icon {
+  margin-bottom: 1.2rem;
+}
