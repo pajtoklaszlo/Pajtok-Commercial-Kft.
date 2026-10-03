@@ -1741,3 +1741,33 @@ img {
     font-size: 0.94rem;
   }
 }
+/* BENEFIT SVG IKONOK */
+
+.benefit-icon {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(33, 198, 247, 0.28);
+  border-radius: 50%;
+
+  background: rgba(33, 198, 247, 0.05);
+
+  color: var(--accent-2);
+
+  filter: none !important;
+}
+
+.benefit-icon svg {
+  width: 24px;
+  height: 24px;
+
+  fill: none;
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
