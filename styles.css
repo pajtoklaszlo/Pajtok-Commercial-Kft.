@@ -1771,3 +1771,47 @@ img {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+/* =========================================================
+   SVG IKONOK – VÉGLEGES JAVÍTÁS
+   ========================================================= */
+
+.benefit-icon {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  flex: 0 0 42px;
+
+  border: 1px solid rgba(33, 198, 247, 0.45);
+  border-radius: 50%;
+
+  background: rgba(33, 198, 247, 0.04);
+
+  color: #21c6f7;
+
+  filter: none !important;
+}
+
+.benefit-icon svg {
+  width: 24px;
+  height: 24px;
+
+  overflow: visible;
+
+  fill: none !important;
+  stroke: #21c6f7 !important;
+
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.benefit-icon svg path,
+.benefit-icon svg circle,
+.benefit-icon svg line,
+.benefit-icon svg polyline {
+  fill: none !important;
+  stroke: #21c6f7 !important;
+}
