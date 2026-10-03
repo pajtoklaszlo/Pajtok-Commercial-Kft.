@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="hu">
 
@@ -16,421 +15,874 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
+
+    /* =========================================================
+       KOLLÉGÁINK OLDAL – SAJÁT, BIZTONSÁGOS STÍLUSOK
+       ========================================================= */
+
+    .team-page-top {
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5, 20, 30, 0.97) 0%,
+          rgba(5, 20, 30, 0.92) 35%,
+          rgba(5, 20, 30, 0.66) 60%,
+          rgba(5, 20, 30, 0.20) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(3, 13, 20, 0.10),
+          rgba(3, 13, 20, 0.30)
+        ),
+        url("hero-car.jpg");
+
+      background-size: cover;
+      background-position: center right;
+      background-repeat: no-repeat;
+
+      border-bottom: 1px solid rgba(79, 199, 255, 0.12);
+    }
+
+    .team-page-top::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at 18% 20%,
+          rgba(16, 167, 239, 0.12),
+          transparent 30%
+        );
+    }
+
+    .team-page-top .container {
+      position: relative;
+      z-index: 1;
+    }
+
+
+    /* HERO */
+
+    .team-hero {
+      padding: 3rem 0 2rem;
+    }
+
+    .team-hero-inner {
+      max-width: 760px;
+    }
+
+    .team-hero h1 {
+      margin: 0;
+      font-size: clamp(3rem, 4.8vw, 4.5rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .team-hero .lead {
+      margin-top: 1rem;
+      margin-bottom: 0;
+
+      max-width: 650px;
+
+      color: #d1dce3;
+      line-height: 1.65;
+    }
+
+
+    /* TELJES CSAPAT SZEKCIÓ */
+
     .team-section {
-      padding: 2rem 0 4rem;
+      padding: 0 0 4rem;
     }
 
     .team-group {
-      margin-top: 2.5rem;
+      margin-top: 2.2rem;
+    }
+
+    .team-group:first-child {
+      margin-top: 0;
     }
 
     .team-group-header {
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.2rem;
     }
 
     .team-group-header h2 {
-      margin: 0 0 0.5rem;
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin: 0 0 0.45rem;
+
+      font-size: clamp(1.8rem, 2.6vw, 2.35rem);
+
+      letter-spacing: -0.02em;
     }
 
     .team-group-header p {
       margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 70ch;
+
+      max-width: 72ch;
+
+      color: #c0ccd4;
+
+      line-height: 1.65;
     }
+
+
+    /* KÁRTYA GRID */
 
     .team-grid {
       display: grid;
+
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.4rem;
+
+      gap: 1.2rem;
     }
 
     .team-grid.locations {
       grid-template-columns: repeat(3, 1fr);
     }
 
+
+    /* KÁRTYÁK */
+
     .person-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      border-radius: 24px;
-      padding: 1.5rem;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
+      position: relative;
+
       display: flex;
       flex-direction: column;
-      min-height: 100%;
+
+      min-height: 250px;
+
+      padding: 1.4rem;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(7, 36, 50, 0.90),
+          rgba(6, 27, 39, 0.82)
+        );
+
+      border:
+        1px solid
+        rgba(79, 199, 255, 0.18);
+
+      border-radius: 22px;
+
+      box-shadow:
+        0 18px 42px
+        rgba(0, 0, 0, 0.24);
+
+      backdrop-filter: blur(10px);
+
+      transition:
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        background 0.22s ease;
     }
 
-    .person-avatar {
-      width: 96px;
-      height: 96px;
+    .person-card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 150px;
+      height: 150px;
+
+      right: -65px;
+      top: -65px;
+
       border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(33, 198, 247, 0.12),
+          transparent 70%
+        );
+
+      pointer-events: none;
+    }
+
+    .person-card:hover {
+      transform: translateY(-4px);
+
+      border-color:
+        rgba(33, 198, 247, 0.40);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(8, 44, 60, 0.94),
+          rgba(6, 30, 42, 0.86)
+        );
+    }
+
+
+    /* MONOGRAM */
+
+    .person-avatar {
+      position: relative;
+      z-index: 1;
+
+      width: 72px;
+      height: 72px;
+
       display: grid;
       place-items: center;
-      margin-bottom: 1.2rem;
+
+      margin-bottom: 1rem;
+
+      border-radius: 50%;
+
       background:
         linear-gradient(
           135deg,
-          rgba(16, 167, 239, 0.95),
-          rgba(79, 199, 255, 0.85)
+          rgba(10, 174, 234, 0.98),
+          rgba(33, 198, 247, 0.90)
         );
+
       color: #031018;
-      font-size: 1.35rem;
+
+      font-size: 1.08rem;
       font-weight: 800;
+
       letter-spacing: 0.03em;
-      box-shadow: 0 10px 30px rgba(16, 167, 239, 0.16);
+
+      box-shadow:
+        0 10px 26px
+        rgba(16, 167, 239, 0.18);
     }
 
+
+    /* KÁRTYA SZÖVEGEK */
+
     .person-card h3 {
-      margin: 0 0 0.4rem;
-      font-size: 1.2rem;
+      margin: 0 0 0.35rem;
+
+      font-size: 1.15rem;
     }
 
     .person-role {
-      color: var(--accent-2);
-      font-weight: 700;
-      line-height: 1.5;
-      min-height: 3rem;
       margin-bottom: 1rem;
+
+      min-height: 2.7rem;
+
+      color: var(--accent-2);
+
+      font-size: 0.95rem;
+      font-weight: 700;
+
+      line-height: 1.45;
     }
 
     .person-email {
       margin-top: auto;
+
       padding-top: 0.8rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+      border-top:
+        1px solid
+        rgba(255, 255, 255, 0.08);
     }
 
     .person-email span {
       display: block;
+
       margin-bottom: 0.3rem;
-      color: var(--muted);
-      font-size: 0.78rem;
+
+      color: #aebbc4;
+
+      font-size: 0.74rem;
+
       text-transform: uppercase;
+
       letter-spacing: 0.08em;
     }
 
     .person-email a {
       color: var(--accent-2);
-      word-break: break-word;
+
+      font-size: 0.92rem;
+
       line-height: 1.5;
+
+      word-break: break-word;
     }
 
     .person-email a:hover {
       text-decoration: underline;
     }
 
+
+    /* TELEPHELY BADGE */
+
     .location-badge {
       display: inline-block;
+
       width: fit-content;
-      margin-bottom: 1rem;
-      padding: 0.35rem 0.7rem;
+
+      margin-bottom: 0.75rem;
+
+      padding: 0.3rem 0.65rem;
+
       border-radius: 999px;
-      background: rgba(16, 167, 239, 0.12);
-      color: var(--accent-2);
-      font-size: 0.8rem;
-      font-weight: 700;
+
+      background:
+        rgba(16, 167, 239, 0.14);
+
+      color:
+        var(--accent-2);
+
+      font-size: 0.76rem;
+
+      font-weight: 800;
     }
 
+
+    /* ALSÓ TERÜLET */
+
+    .team-bottom-space {
+      padding-bottom: 1rem;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
     @media (max-width: 1100px) {
+
       .team-grid,
       .team-grid.locations {
         grid-template-columns: repeat(2, 1fr);
       }
+
     }
 
+
+    @media (max-width: 920px) {
+
+      .team-page-top {
+        background:
+          linear-gradient(
+            180deg,
+            rgba(5, 20, 30, 0.97),
+            rgba(5, 20, 30, 0.88)
+          ),
+          url("hero-car.jpg");
+
+        background-size: cover;
+        background-position: 72% center;
+      }
+
+      .team-hero {
+        padding: 2.5rem 0 1.6rem;
+      }
+
+    }
+
+
     @media (max-width: 700px) {
+
       .team-grid,
       .team-grid.locations {
         grid-template-columns: 1fr;
       }
 
+      .team-hero h1 {
+        font-size: clamp(2.7rem, 12vw, 4rem);
+      }
+
       .person-role {
         min-height: auto;
       }
+
+      .person-card {
+        min-height: 0;
+      }
+
     }
+
   </style>
 </head>
 
 
 <body>
 
-<header class="site-header">
-  <div class="container nav-wrap">
+  <!-- =====================================================
+       FEJLÉC
+       ===================================================== -->
 
-    <a class="brand" href="index.html">
-      <img
-        src="logo.jpg"
-        alt="PAJTÓK Commercial Kft. logó"
-        class="brand-logo"
-      />
-    </a>
+  <header class="site-header">
 
-    <nav class="site-nav">
-      <a href="index.html">Főoldal</a>
-      <a href="esg.html">ESG</a>
-      <a class="active" href="kollegaink.html">Kollégáink</a>
-      <a href="kapcsolat.html">Kapcsolat</a>
-    </nav>
+    <div class="container nav-wrap">
 
-  </div>
-</header>
+      <a class="brand" href="index.html">
+
+        <img
+          src="logo.jpg"
+          alt="PAJTÓK Commercial Kft. logó"
+          class="brand-logo"
+        />
+
+      </a>
 
 
-<main>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Menü megnyitása"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
 
-  <section class="page-hero small-hero">
-    <div class="container">
 
-      <p class="eyebrow">Csapatunk</p>
+      <nav class="site-nav">
 
-      <h1>Kollégáink</h1>
+        <a href="index.html">
+          Főoldal
+        </a>
 
-      <p class="lead narrow">
-        Ismerje meg vezetőinket, központi munkatársainkat
-        és telephelyeink képviseletvezetőit.
-      </p>
+        <a href="esg.html">
+          ESG
+        </a>
+
+        <a
+          class="active"
+          href="kollegaink.html"
+        >
+          Kollégáink
+        </a>
+
+        <a href="kapcsolat.html">
+          Kapcsolat
+        </a>
+
+      </nav>
 
     </div>
-  </section>
+
+  </header>
 
 
-  <section class="team-section">
-    <div class="container">
+
+  <main>
+
+
+    <!-- =====================================================
+         HÁTTÉRKÉPES FELSŐ RÉSZ
+         ===================================================== -->
+
+    <div class="team-page-top">
+
+
+      <!-- HERO -->
+
+      <section class="team-hero">
+
+        <div class="container">
+
+          <div class="team-hero-inner">
+
+            <p class="eyebrow">
+              Csapatunk
+            </p>
+
+            <h1>
+              Kollégáink
+            </h1>
+
+            <p class="lead">
+              Ismerje meg vezetőinket, központi munkatársainkat
+              és telephelyeink képviseletvezetőit.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
 
       <!-- VEZETÉS ÉS KÖZPONTI FUNKCIÓK -->
 
-      <div class="team-group">
+      <section class="team-section">
 
-        <div class="team-group-header">
-          <h2>Vezetés és központi funkciók</h2>
+        <div class="container">
 
-          <p>
-            A vállalat irányítását, kereskedelmi működését,
-            adminisztrációját és belső fejlesztési folyamatait
-            támogató munkatársaink.
-          </p>
-        </div>
+          <div class="team-group">
 
+            <div class="team-group-header">
 
-        <div class="team-grid">
+              <h2>
+                Vezetés és központi funkciók
+              </h2>
 
-          <!-- PAJTÓK LÁSZLÓ -->
+              <p>
+                A vállalat irányítását, kereskedelmi működését,
+                adminisztrációját és belső fejlesztési folyamatait
+                támogató munkatársaink.
+              </p>
 
-          <article class="person-card">
-
-            <div class="person-avatar">
-              PL
             </div>
 
-            <h3>Pajtók László</h3>
 
-            <div class="person-role">
-              Ügyvezető
+            <div class="team-grid">
+
+
+              <!-- PAJTÓK LÁSZLÓ -->
+
+              <article class="person-card">
+
+                <div class="person-avatar">
+                  PL
+                </div>
+
+                <h3>
+                  Pajtók László
+                </h3>
+
+                <div class="person-role">
+                  Ügyvezető
+                </div>
+
+                <div class="person-email">
+
+                  <span>
+                    Email
+                  </span>
+
+                  <a href="mailto:lpajtok@intercars.eu">
+                    lpajtok@intercars.eu
+                  </a>
+
+                </div>
+
+              </article>
+
+
+
+              <!-- CSORTOS GÁBOR -->
+
+              <article class="person-card">
+
+                <div class="person-avatar">
+                  CG
+                </div>
+
+                <h3>
+                  Csortos Gábor
+                </h3>
+
+                <div class="person-role">
+                  Kereskedelmi vezető
+                </div>
+
+                <div class="person-email">
+
+                  <span>
+                    Email
+                  </span>
+
+                  <a href="mailto:gcsortos@intercars.eu">
+                    gcsortos@intercars.eu
+                  </a>
+
+                </div>
+
+              </article>
+
+
+
+              <!-- VÉKONY KRISZTINA -->
+
+              <article class="person-card">
+
+                <div class="person-avatar">
+                  VK
+                </div>
+
+                <h3>
+                  Vékony Krisztina
+                </h3>
+
+                <div class="person-role">
+                  Vezető adminisztrátor
+                </div>
+
+                <div class="person-email">
+
+                  <span>
+                    Email
+                  </span>
+
+                  <a href="mailto:kvekony@intercars.eu">
+                    kvekony@intercars.eu
+                  </a>
+
+                </div>
+
+              </article>
+
+
+
+              <!-- BOZSIK CSILLA -->
+
+              <article class="person-card">
+
+                <div class="person-avatar">
+                  BCS
+                </div>
+
+                <h3>
+                  Bozsik Csilla
+                </h3>
+
+                <div class="person-role">
+                  Belső képzési és fejlesztési referens
+                </div>
+
+                <div class="person-email">
+
+                  <span>
+                    Email
+                  </span>
+
+                  <a href="mailto:csbozsik@intercars.eu">
+                    csbozsik@intercars.eu
+                  </a>
+
+                </div>
+
+              </article>
+
+
             </div>
 
-            <div class="person-email">
-              <span>Email</span>
-
-              <a href="mailto:lpajtok@intercars.eu">
-                lpajtok@intercars.eu
-              </a>
-            </div>
-
-          </article>
-
-
-          <!-- CSORTOS GÁBOR -->
-
-          <article class="person-card">
-
-            <div class="person-avatar">
-              CG
-            </div>
-
-            <h3>Csortos Gábor</h3>
-
-            <div class="person-role">
-              Kereskedelmi vezető
-            </div>
-
-            <div class="person-email">
-              <span>Email</span>
-
-              <a href="mailto:gcsortos@intercars.eu">
-                gcsortos@intercars.eu
-              </a>
-            </div>
-
-          </article>
-
-
-          <!-- VÉKONY KRISZTINA -->
-
-          <article class="person-card">
-
-            <div class="person-avatar">
-              VK
-            </div>
-
-            <h3>Vékony Krisztina</h3>
-
-            <div class="person-role">
-              Vezető adminisztrátor
-            </div>
-
-            <div class="person-email">
-              <span>Email</span>
-
-              <a href="mailto:kvekony@intercars.eu">
-                kvekony@intercars.eu
-              </a>
-            </div>
-
-          </article>
-
-
-          <!-- BOZSIK CSILLA -->
-
-          <article class="person-card">
-
-            <div class="person-avatar">
-              BCS
-            </div>
-
-            <h3>Bozsik Csilla</h3>
-
-            <div class="person-role">
-              Belső képzési és fejlesztési referens
-            </div>
-
-            <div class="person-email">
-              <span>Email</span>
-
-              <a href="mailto:csbozsik@intercars.eu">
-                csbozsik@intercars.eu
-              </a>
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-
-      <!-- TELEPHELYI VEZETŐK -->
-
-      <div class="team-group">
-
-        <div class="team-group-header">
-          <h2>Telephelyi vezetők</h2>
-
-          <p>
-            Egri, hatvani és gyöngyösi képviseleteink
-            helyi működéséért felelős vezető munkatársaink.
-          </p>
-        </div>
-
-
-        <div class="team-grid locations">
-
-          <!-- EGER -->
-
-          <article class="person-card">
-
-            <div class="person-avatar">
-              HA
-            </div>
-
-            <span class="location-badge">
-              Eger
-            </span>
-
-            <h3>Hütter Attila</h3>
-
-            <div class="person-role">
-              Képviseletvezető
-            </div>
-
-            <div class="person-email">
-              <span>Email</span>
-
-              <a href="mailto:ahutter@intercars.eu">
-                ahutter@intercars.eu
-              </a>
-            </div>
-
-          </article>
-
-
-          <!-- HATVAN -->
-
-          <article class="person-card">
-
-            <div class="person-avatar">
-              FB
-            </div>
-
-            <span class="location-badge">
-              Hatvan
-            </span>
-
-            <h3>Fehér Balázs</h3>
-
-            <div class="person-role">
-              Képviseletvezető
-            </div>
-
-            <div class="person-email">
-              <span>Email</span>
-
-              <a href="mailto:bfeher@intercars.eu">
-                bfeher@intercars.eu
-              </a>
-            </div>
-
-          </article>
-
-
-          <!-- GYÖNGYÖS -->
-
-          <article class="person-card">
-
-            <div class="person-avatar">
-              BKD
-            </div>
-
-            <span class="location-badge">
-              Gyöngyös
-            </span>
-
-            <h3>Barta Kristóf Dániel</h3>
-
-            <div class="person-role">
-              Képviseletvezető
-            </div>
-
-            <div class="person-email">
-              <span>Email</span>
-
-              <a href="mailto:kbarta@intercars.eu">
-                kbarta@intercars.eu
-              </a>
-            </div>
-
-          </article>
+          </div>
 
         </div>
 
-      </div>
+      </section>
+
 
     </div>
-  </section>
 
-</main>
+
+
+    <!-- =====================================================
+         TELEPHELYI VEZETŐK
+         ===================================================== -->
+
+    <section class="team-section team-bottom-space">
+
+      <div class="container">
+
+        <div class="team-group">
+
+          <div class="team-group-header">
+
+            <p class="eyebrow">
+              Telephelyeink
+            </p>
+
+            <h2>
+              Telephelyi vezetők
+            </h2>
+
+            <p>
+              Egri, hatvani és gyöngyösi képviseleteink
+              helyi működéséért felelős vezető munkatársaink.
+            </p>
+
+          </div>
+
+
+          <div class="team-grid locations">
+
+
+            <!-- EGER -->
+
+            <article class="person-card">
+
+              <div class="person-avatar">
+                HA
+              </div>
+
+              <span class="location-badge">
+                Eger
+              </span>
+
+              <h3>
+                Hütter Attila
+              </h3>
+
+              <div class="person-role">
+                Képviseletvezető
+              </div>
+
+              <div class="person-email">
+
+                <span>
+                  Email
+                </span>
+
+                <a href="mailto:ahutter@intercars.eu">
+                  ahutter@intercars.eu
+                </a>
+
+              </div>
+
+            </article>
+
+
+
+            <!-- HATVAN -->
+
+            <article class="person-card">
+
+              <div class="person-avatar">
+                FB
+              </div>
+
+              <span class="location-badge">
+                Hatvan
+              </span>
+
+              <h3>
+                Fehér Balázs
+              </h3>
+
+              <div class="person-role">
+                Képviseletvezető
+              </div>
+
+              <div class="person-email">
+
+                <span>
+                  Email
+                </span>
+
+                <a href="mailto:bfeher@intercars.eu">
+                  bfeher@intercars.eu
+                </a>
+
+              </div>
+
+            </article>
+
+
+
+            <!-- GYÖNGYÖS -->
+
+            <article class="person-card">
+
+              <div class="person-avatar">
+                BKD
+              </div>
+
+              <span class="location-badge">
+                Gyöngyös
+              </span>
+
+              <h3>
+                Barta Kristóf Dániel
+              </h3>
+
+              <div class="person-role">
+                Képviseletvezető
+              </div>
+
+              <div class="person-email">
+
+                <span>
+                  Email
+                </span>
+
+                <a href="mailto:kbarta@intercars.eu">
+                  kbarta@intercars.eu
+                </a>
+
+              </div>
+
+            </article>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-wrap">
+
+      <span>
+        © PAJTÓK Commercial Kft. Minden jog fenntartva.
+      </span>
+
+      <span>
+        3377 Szihalom, Kossuth Lajos út 90.
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- MOBIL MENÜ -->
+
+  <script>
+
+    const toggle =
+      document.querySelector('.menu-toggle');
+
+    const nav =
+      document.querySelector('.site-nav');
+
+    if (toggle && nav) {
+
+      toggle.addEventListener(
+        'click',
+        () => {
+
+          nav.classList.toggle('open');
+
+          toggle.setAttribute(
+            'aria-expanded',
+            nav.classList.contains('open')
+              ? 'true'
+              : 'false'
+          );
+
+        }
+      );
+
+    }
+
+  </script>
 
 
 </body>
 
 </html>
-```
