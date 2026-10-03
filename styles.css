@@ -1660,3 +1660,84 @@ img {
   }
 
 }
+/* =========================================================
+   FEJLÉC + NAVIGÁCIÓ FINOMHANGOLÁS
+   ========================================================= */
+
+.site-header .nav-wrap {
+  min-height: 94px;
+}
+
+.brand-logo {
+  height: 76px;
+}
+
+.site-nav {
+  gap: 0.55rem;
+}
+
+.site-nav a {
+  padding: 0.8rem 1.05rem;
+  font-size: 0.96rem;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  box-shadow:
+    inset 0 0 0 1px rgba(41, 205, 255, 0.22),
+    0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+/* HERO KICSIT FELJEBB ÉS KOMPAKTABB */
+
+.home-hero {
+  padding-top: 3.2rem;
+}
+
+.home-hero-grid {
+  gap: 3.8rem;
+}
+
+.hero-actions {
+  margin-top: 1.35rem;
+}
+
+
+/* ALSÓ 4 ELEMES SÁV – EGYSÉGES IKONMEGJELENÉS */
+
+.benefit-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(33, 198, 247, 0.28);
+  border-radius: 50%;
+  color: var(--accent-2);
+  font-size: 1.2rem;
+  background: rgba(33, 198, 247, 0.05);
+}
+
+
+/* A LILA EMOJI HATÁS CSÖKKENTÉSE */
+
+.benefit-item:nth-child(2) .benefit-icon {
+  filter: grayscale(1) brightness(1.8) saturate(0);
+}
+
+
+/* TELEFONON MARADJON ARÁNYOS */
+
+@media (max-width: 920px) {
+  .site-header .nav-wrap {
+    min-height: 82px;
+  }
+
+  .brand-logo {
+    height: 66px;
+  }
+
+  .site-nav a {
+    font-size: 0.94rem;
+  }
+}
